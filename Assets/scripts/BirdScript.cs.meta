@@ -3,7 +3,15 @@ guid: 46419b46f329ad24a8299d1c7d6927c6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - myRigidbody: {instanceID: 0}
+  - logic: {instanceID: 0}
+  - spawner: {instanceID: 0}
+  - gameOverScreen: {instanceID: 0}
+  - sound: {instanceID: 0}
+  - dead: {fileID: 8300000, guid: 4308b5b121d67bb439683e54af6b163c, type: 3}
+  - jump: {fileID: 8300000, guid: 9b6520b4b646e664a8a37008327947df, type: 3}
+  - score: {fileID: 8300000, guid: cddb8d92e128a4448881f6b927f5dd71, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

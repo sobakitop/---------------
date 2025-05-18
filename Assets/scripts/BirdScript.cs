@@ -10,7 +10,10 @@ public class BirdScript : MonoBehaviour
     public bool birdIsAlive;
     public GameObject spawner;
     public GameObject gameOverScreen;
-
+    public AudioSource sound;
+    public AudioClip dead;
+    public AudioClip jump;
+    public AudioClip score;
     void Start()
     {
         birdIsAlive = true;
@@ -31,6 +34,7 @@ public class BirdScript : MonoBehaviour
         catch { }
         if ((touch || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) && birdIsAlive)
         {
+            sound.PlayOneShot(jump);
             if (startPlay)
             {
                 spawner.SetActive(true);
@@ -43,8 +47,14 @@ public class BirdScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
+        sound.PlayOneShot(dead);
         birdIsAlive = false;
         spawner.SetActive(false);
         gameOverScreen.SetActive(true);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        sound.PlayOneShot(score);
     }
 }
